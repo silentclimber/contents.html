@@ -14,7 +14,7 @@ function clock() {
     inputs[3].value = Math.floor((diff % (1000 * 60)) / 1000);
 }
 clock();
-if (diff == 0) {}
+// if (diff == 0) {}
 setInterval(
     function(){
         clock()
