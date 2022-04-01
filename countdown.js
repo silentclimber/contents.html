@@ -1,5 +1,5 @@
 // var end1 = new Date("Mar 31, 2022 22:00:00");
-var end1 = new Date("1 April 2022 16:26 PM");
+var end1 = new Date("10 April 2022 10:00 PM");
 document.getElementById('enddate').innerText = end1;
 
 const inputs = document.querySelectorAll("input")
