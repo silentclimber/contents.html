@@ -24,10 +24,10 @@ h2, h3{
     text-align: center;
 }
 .counting{
-    width: 900px;
-    height: 90px;
+    width: 80%;
+    height: 30%;
     border: 1px solid none;
-    margin: 20px auto;
+    margin: 10px auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -58,7 +58,35 @@ input{
     text-align: center;
     background-color: rgb(167, 167, 49);
 }
+#secondcount{
+    color: whitesmoke;
+    font-size: 40px;
+    margin: 5% auto;
+    border: 1px  solid none;
+    text-shadow: 2px 2px 2px #ff0000;
+}
 button{
     width: 100px;
     height: 30px;
+}
+#stop{
+    margin: 30px auto;
+    color: whitesmoke;
+    display: none;
+}
+@media screen and (max-width:660px) {
+    .counting{
+        width: 80%;
+        height: 40%;
+        border: 1px solid none;
+        margin: 10px auto;
+        flex-wrap: wrap;
+    }
+    #secondcount{
+        color: whitesmoke;
+        font-size: 40px;
+        margin: 5% auto;
+        border: 1px  solid none;
+        text-shadow: 2px 2px 2px #ff0000;
+    }
 }
