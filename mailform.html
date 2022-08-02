@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3447/3447476.png">
+    <title>Mail</title>
+    <style>
+        form{
+            border: 2px solid none;
+            width: 400px;
+            padding-left: 20px;
+            box-shadow: 0px 0px 8px 03px grey;
+        }
+        input{
+            width: 360px;
+            height: 20px;
+            border-top: none; border-left: none; border-right: none;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.171); outline: none;
+            font-size: larger; transition: 0.3s; 
+        }
+        input:hover{
+            border-bottom: 2px solid green;
+           
+            
+        }
+        #subs{
+            background-color: red; color:white; border:none; border-radius: 05px; font-size: larger; cursor: pointer; transform: translateX(270px); font-weight: 10px;
+        }
+        #subs:hover{
+            background-color: aliceblue; color: rgba(0, 0, 0, 0.61); transition: 0.3s;font-weight: normal;
+        }
+        body {
+            display: flex; justify-content: center;justify-content: center;
+        }
+        #main{
+            transform: translateY(80px);
+            border: 2px solid none; width: 450px;
+            float: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main">
+<form id="userdata" action="https://script.google.com/macros/s/AKfycbx2QC588guQ-_YG72MNVcKk7HetEwuuuz2P0_UmhBI4YfjBytb-iNNYQ9qJ2T_CQRWacw/exec" method="post">
+    <br>
+    <p>Name</p><input type="text" name="Name" required id="sub">
+    <p>Email</p><input type="email" name="Email" required id="sub">
+    <br><br>
+    <button id="subs" href="C:/Users/a/Desktop/new_folder">Subscribe</button><br><br>
+</form>
+<br>
+<!-- <button id="back" onclick="back()" style="border:none; font-size: larger;">Back</button> -->
+<p id="demo">
+</p>
+</div>
+
+<script>
+    // {
+    // let btn = document.createElement("button");
+    // btn.innerHTML = "Back";
+    // var bt = document.body.appendChild(btn);
+    // bt.onclick = () => {
+    //     history.back();
+    // }
+    // }
+
+    {document.getElementById('demo').innerHTML = "Subscribe us For more notification directly, if already subcribed ignore it!"}
+
+    
+</script>
+</body>
+</html>
