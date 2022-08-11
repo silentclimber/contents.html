@@ -26,11 +26,11 @@
             
         }
         #subs{
-            background-color: red; color:white; border:none; border-radius: 05px; font-size: larger; cursor: pointer; transform: translateX(270px); font-weight: 10px;
+            background-color: red; width: 100px; color:white; border:none; border-radius: 05px; font-size: larger; cursor: pointer; font-weight: 10px; text-decoration: none;
         }
-        #subs:hover{
+        /* #subs:hover{
             background-color: aliceblue; color: rgba(0, 0, 0, 0.61); transition: 0.3s;font-weight: normal;
-        }
+        } */
         body {
             display: flex; justify-content: center;justify-content: center;
         }
@@ -44,32 +44,81 @@
 <body>
 
 <div id="main">
-<form id="userdata" action="https://script.google.com/macros/s/AKfycbx2QC588guQ-_YG72MNVcKk7HetEwuuuz2P0_UmhBI4YfjBytb-iNNYQ9qJ2T_CQRWacw/exec" method="post">
+<form id="userdata" onsubmit="return validate()" name="form" action="https://script.google.com/macros/s/AKfycbwPDBFkjGe2EpEbfL3dAPHb6NgLLfkGU4Tcd9GPtlUUOIMBVKnfJnlK48cHkbjrRzWfnw/exec" method="post">
     <br>
-    <p>Name</p><input type="text" name="Name" required id="sub">
-    <p>Email</p><input type="email" name="Email" required id="sub">
+    <p>Name</p><input type="text" name="Name"  id="sub1">
+    <p>Email</p><input type="email" name="Email"  id="sub2">
+    <input type="text" name="data_and_time" id="d&t" readonly style="border:none; display: none;" >
     <br><br>
-    <button id="subs" href="https://silentclimber.github.io/contents.html/ok.html">Subscribe</button><br><br>
+    <a href="https://silentclimber.github.io/contents.html/ok.html"><button id="subs" onclick="clic()">Subscribe</button></a><br><br>
 </form>
 <br>
-<!-- <button id="back" onclick="back()" style="border:none; font-size: larger;">Back</button> -->
 <p id="demo">
 </p>
 </div>
-
 <script>
-    // {
-    // let btn = document.createElement("button");
-    // btn.innerHTML = "Back";
-    // var bt = document.body.appendChild(btn);
-    // bt.onclick = () => {
-    //     history.back();
-    // }
-    // }
+    /*this 'clic()' function is about to, if data was submited from form successfully. the styling of subscribe button is change or otherwise not changed!*/
+    function clic() {
+        if (name.length == 0 && email.length == 0) {
+            document.getElementById('subs').style.backgroundColor ="red";
+            document.getElementById('subs').style.color = "white";
+            document.getElementById('subs').style.fontWeight = "larger";  
+        }
+        else{
+            document.getElementById('subs').style.backgroundColor ="aliceblue";
+            document.getElementById('subs').style.color = "rgba(0, 0, 0, 0.61)";
+            document.getElementById('subs').style.transition = "0.3s";
+            document.getElementById('subs').style.fontWeight = "normal";
+        }
+        
+    }
+function validateName() {
+            var name = document.getElementById('sub1').value;
+            if(name.length == 0) {
+              alert("Name can't be blank") ;
+              return false;
 
-    {document.getElementById('demo').innerHTML = "Subscribe us For more notification directly, if already subcribed ignore it!"}
+            }
+            if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
+              alert("Please enter your correct name") ;//Validation Message
+              return false;
+            }
+            return true;
+          }
+function validateEmail () {
 
-    
+            var email = document.getElementById('sub2').value;
+            if(email.length == 0) {
+            alert("Email can't be blank") ;//Validation Message
+            return false;
+
+            }
+
+            if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+            alert("Please enter a correct email address") ;//Validation Message
+            return false;
+
+            }
+
+            return true;
+
+        }
+function validate() {
+          if (!validateName() || !validateEmail()) {
+
+            alert("Form not submitted");//Validation Message
+            return false;
+          }
+          else {
+            submitted=true;
+            return true;
+          }
+        }
+</script>
+<script>
+    {var data_and_time = new Date(); 
+    document.getElementById('d&t').value = data_and_time;}
+    {document.getElementById('demo').innerHTML = "Subscribe us For more notification directly, if already subcribed ignore it!"};
 </script>
 </body>
 </html>
