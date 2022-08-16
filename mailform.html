@@ -116,8 +116,11 @@ function validate() {
         }
 </script>
 <script>
-    {var data_and_time = new Date(); 
-    document.getElementById('d&t').value = data_and_time;}
+   setInterval(function(){
+       var d = new Date();          
+       var n = d.toLocaleString([], { hour12: true});
+       document.getElementById("d&t").value = n;
+    }, 1000)
     {document.getElementById('demo').innerHTML = "Subscribe us For more notification directly, if already subcribed ignore it!"};
 </script>
 </body>
