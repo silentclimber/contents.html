@@ -59,6 +59,8 @@
 <script>
     /*this 'clic()' function is about to, if data was submited from form successfully. the styling of subscribe button is change or otherwise not changed!*/
     function clic() {
+        var name = document.getElementById('sub1').value;
+        var email = document.getElementById('sub2').value;
         if (name.length == 0 && email.length == 0) {
             document.getElementById('subs').style.backgroundColor ="red";
             document.getElementById('subs').style.color = "white";
@@ -86,7 +88,6 @@ function validateName() {
             return true;
           }
 function validateEmail () {
-
             var email = document.getElementById('sub2').value;
             if(email.length == 0) {
             alert("Email can't be blank") ;//Validation Message
